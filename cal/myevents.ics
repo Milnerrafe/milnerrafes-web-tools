@@ -1,0 +1,29 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+X-WR-CALNAME:Christmas-count-down
+NAME:Christmas-count-down
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Australia/Perth
+LAST-MODIFIED:20201011T015911Z
+TZURL:http://tzurl.org/zoneinfo-outlook/Australia/Perth
+X-LIC-LOCATION:Australia/Perth
+BEGIN:STANDARD
+TZNAME:AWST
+TZOFFSETFROM:+0800
+TZOFFSETTO:+0800
+DTSTART:19700101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20221210T072142Z
+UID:1670656789651-13815@ical.marudot.com
+DTSTART;VALUE=DATE:20221225
+RRULE:FREQ=YEARLY;BYMONTH=12;BYMONTHDAY=25
+DTEND;VALUE=DATE:20221226
+SUMMARY:Christmas
+URL:https://tools.rafemedia.com/countdown-to-christmas
+DESCRIPTION:Christmas is a holiday that is celebrated annually on December 25th. It is a time for people to come together and celebrate with their families\, exchange gifts\, and participate in various religious and cultural traditions. Some common symbols of Christmas include Christmas trees\, mistletoe\, holly\, and Santa Claus. Christmas is a time of joy\, giving\, and goodwill towards others.\n\nClick the link to see how long till it's time\,
+END:VEVENT
+END:VCALENDAR

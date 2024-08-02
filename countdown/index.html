@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+    <head>
+            <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="https://tools.rafemedia.com/countdown-to-christmas" />
+    <meta name="twitter:title" content="Countdown to Christmas" />
+    <meta name="twitter:description" content=" wondering how long it is till Christmas find out here" />
+    <meta name="twitter:image" content="https://tools.rafemedia.com/images/twittershot.png" />
+    <title>Countdown to Christmas</title>
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="icon" type="image/x-icon" href="/images/countdown-to-christmas.png">
+    <link rel="apple-touch-icon" href="/images/icons-512.png">        
+</Script>
+        
+        <style>
+body {
+ font-family: sans-serif;
+ background-color: #fdf6e3;
+ color: #657b83;
+}
+
+h1 {
+ color: #586e75;
+}
+
+label {
+ color: #586e75;
+}
+
+input[type="color"],
+input[type="number"],
+input[type="text"] {
+ background-color: #eee8d5;
+ border: 1px solid #93a1a1;
+ padding: 5px;
+ color: #657b83;
+}
+
+button {
+ background-color: #93a1a1;
+ color: #fdf6e3;
+ border: none;
+ padding: 8px 16px;
+ cursor: pointer;
+}
+
+pre {
+ background-color: #eee8d5;
+ padding: 10px;
+ border-radius: 5px;
+ color: #586e75;
+}
+
+.spamChar {
+ display: flex;
+ align-items: center;
+}
+
+#emojiDisplay {
+ background-color: #eee8d5;
+ border: 1px solid #93a1a1;
+ padding: 5px;
+ margin-left: 10px;
+ color: #657b83;
+}
+
+video {
+ width: 100%;
+ max-width: 600px;
+ height: auto;
+ display: block;
+ margin-left: 0;
+ margin-right: auto;
+ border: 2px solid #93a1a1;
+ border-radius: 8px;
+}
+
+/* Container */
+.container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 20px;
+}
+
+/* Links */
+a {
+ color: #268bd2;
+ text-decoration: none;
+}
+
+a:hover {
+ color: #fffff;
+}
+
+/* Buttons */
+.btn {
+ display: inline-block;
+ padding: 6px 12px;
+ font-size: 14px;
+ font-weight: 400;
+ line-height: 1.42857143;
+ text-align: center;
+ white-space: nowrap;
+ vertical-align: middle;
+ cursor: pointer;
+ border: 1px solid transparent;
+
+    background-color: #93a1a1;
+    color: #fdf6e3;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;}
+
+.btn:hover {
+ background-color: #839496;
+}
+
+.share-button {
+ padding: 8px 16px;
+ background-color: #268bd2;
+ color: #fff;
+ border: none;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: bold;
+}
+
+.share-button:hover {
+ background-color: #268bd2;
+}
+
+/* Cards */
+.card {
+ background-color: #eee8d5;
+ border: 1px solid #93a1a1;
+
+ padding: 15px;
+ margin-bottom: 20px;
+}
+
+.card-title {
+ color: #586e75;
+ font-size: 18px;
+ margin-top: 0;
+}
+
+.card-text {
+ margin-bottom: 10px;
+}
+
+/* Row */
+.row {
+ display: flex;
+ flex-wrap: wrap;
+ margin-right: -15px;
+ margin-left: -15px;
+}
+
+.col {
+ flex: 1;
+ padding-right: 15px;
+ padding-left: 15px;
+}
+
+/* Misc */
+span {
+ color: #cb4b16;
+}
+
+a.rafe-link {
+ color: #cb4b16;
+	}
+	
+	.mb-3 {
+	font-size: 100px
+	
+		}
+	
+	
+        </style>
+    </head>
+
+    <body>
+        <div class="container my-5">
+            <h1 class="text-center mb-4">The Countdown Tool</h1>
+
+          
+
+
+                      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            
+                   <h2>Christmas</h2>
+
+        <div id="timer" class="mb-3"></div>
+        <button id="add-to-calendar-button" class="btn btn-danger">Add to Calendar</button>
+     
+    </div>
+
+    <script>
+   
+        // Get the current year
+        var currentYear = new Date().getFullYear();
+
+        // Set the date we're counting down to (Christmas of the current year)
+        var countDownDate = new Date(`Dec 25, ${currentYear} 00:00:00`).getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="timer"
+            document.getElementById("timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+            // If the count down is finished, write some text and reset the countdown for the next year
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("timer").innerHTML = "Merry Christmas!";
+
+                // Reset the countdown for the next year
+                currentYear = new Date().getFullYear() + 1;
+                countDownDate = new Date(`Dec 25, ${currentYear} 00:00:00`).getTime();
+            }
+        }, 1000);
+    </script>
+
+    <script>
+        var calendarButton = document.getElementById('add-to-calendar-button');
+        calendarButton.addEventListener('click', function() {
+            window.open('/cal/myevents.ics', '_blank');
+        });
+    </script>
+
+    <script>
+        if (navigator && navigator.serviceWorker) {
+            navigator.serviceWorker.register('sw.js');
+        }
+    </script>
+
+
+
+
+                                                    </div>
+                    </div>
+                </div>
+
+    </body>
+</html>

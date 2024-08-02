@@ -1,0 +1,60 @@
+{
+    "short_name": " MicropolisJS",
+    "name": "Micropolis JS",
+    "icons": [
+      {
+        "src": "/images/icons-vector.svg",
+        "type": "image/svg+xml",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/images/icons-192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/images/icons-512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "id": "/index.html",
+    "start_url": "/index.html",
+    "background_color": "#364e4f",
+    "display": "minimal-ui",
+    "scope": "../",
+    "theme_color": "#c1826b",
+    "shortcuts": [
+      {
+        "name": "Play Now",
+        "short_name": "Play Now",
+        "description": "Play Micropolis JS",
+        "url": "/index.html",
+        "icons": [{ "src": "/images/Play.png", "sizes": "192x192" }]
+      },
+
+      {
+        "name": "About And Instructions",
+        "short_name": "Info",
+        "description": "Info about Micropolis JS and instructions on how to play",
+        "url": "/about.html",
+        "icons": [{ "src": "/images/info.png", "sizes": "192x192" }]
+      }
+
+    ],
+    "description": "A fun game, where you manage and build a Randomly generated city.",
+    "screenshots": [
+      {
+        "src": "/images/screenshot1.png",
+        "type": "image/png",
+        "sizes": "2772x1501",
+        "form_factor": "wide"
+      },
+      {
+        "src": "/images/screenshot2.jpg",
+        "type": "image/jpg",
+        "sizes": "2772x1501",
+        "form_factor": "wide"
+      }
+    ]
+  }

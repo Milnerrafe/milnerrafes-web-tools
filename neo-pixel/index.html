@@ -1,0 +1,155 @@
+<link rel="manifest" href="/manifest.webmanifest">
+ <link rel="icon" type="image/x-icon" href="/images/NeoPixel.png">
+<html>
+<head>
+  <title>NeoPixel Code Generator</title>
+</head>
+<meta name="theme-color" content="#fdf6e3">
+
+ <style>
+body {
+    font-family: sans-serif;
+    background-color: #fdf6e3;
+    color: #657b83;
+}
+
+h1 {
+    color: #586e75;
+}
+
+label {
+    color: #586e75;
+}
+
+input[type="color"],
+input[type="number"],
+input[type="text"] {
+    background-color: #eee8d5;
+    border: 1px solid #93a1a1;
+    padding: 5px;
+    color: #657b83;
+}
+
+button {
+    background-color: #93a1a1;
+    color: #fdf6e3;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+pre {
+    background-color: #eee8d5;
+    padding: 10px;
+    border-radius: 5px;
+    color: #586e75;
+}
+
+.spamChar {
+    display: flex;
+    align-items: center;
+}
+
+#emojiDisplay {
+    background-color: #eee8d5;
+    border: 1px solid #93a1a1;
+    padding: 5px;
+    margin-left: 10px;
+    color: #657b83;
+}
+
+
+
+
+video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    border: 2px solid #93a1a1;
+    border-radius: 8px;
+
+
+}
+
+
+  </style>
+<body>
+  <h1>NeoPixel Code Generator</h1>
+  <p>             Use this tool to generate code that you can use to control a NeoPixel light strip with an Arduino.</p>
+  <form>
+    <label for="num-pixels">Number of pixels:</label><br>
+    <input type="number" id="num-pixels" value="60"><br>
+    <label for="pin">Pin number:</label><br>
+    <input type="number" id="pin" value="6"><br>
+    <label for="color">Color:</label><br>
+    <input type="color" id="color" value="#ff0000"><br><br>
+    <button type="button" onclick="generateCode()">Generate code</button>
+  </form>
+  <p>
+    <strong>Generated code:</strong><br>
+    <pre id="code"></pre>
+  </p>
+
+  <script>
+    function generateCode() {
+      // Get the user-specified values
+      var numPixels = document.getElementById('num-pixels').value;
+      var pin = document.getElementById('pin').value;
+      var color = document.getElementById('color').value;
+
+      // Generate the code
+      var code = `
+// Include the required libraries
+#include <Adafruit_NeoPixel.h>
+
+// Define the number of pixels in the light strip
+#define NUMPIXELS ${numPixels}
+
+// Define the pin that the light strip is connected to
+#define PIN ${pin}
+
+// Create a NeoPixel object
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+void setup() {
+  // Initialize the NeoPixel object
+  pixels.begin();
+}
+
+void loop() {
+  // Set all pixels to the specified color
+  for(int i=0; i<NUMPIXELS; i++) {
+    pixels.setPixelColor(i, pixels.Color(${color.substring(1, 3)}, ${color.substring(3, 5)}, ${color.substring(5, 7)}));
+  }
+  // Show the updated pixel colors on the light strip
+  pixels.show();
+}
+`;
+
+      // Display the generated code
+      document.getElementById('code').innerText = code;
+    }
+  </script>
+  
+   <strong>Instructions:</strong><br>
+    <ol>
+      <li>Connect your Arduino board to your computer using a USB cable.</li>
+      <li>Open the Arduino IDE and click on the "File" menu, then select "New" to create a new sketch.</li>
+      <li>Copy and paste the generated code into the Arduino IDE.</li>
+      <li>Click on the "Tools" menu and select the correct "Board" and "Port" for your Arduino board.</li>
+      <li>Click on the "Upload" button to flash the code to your Arduino board.</li>
+      <li>Once the code has been successfully uploaded, you should see the NeoPixel light strip change to the specified color.</li>
+    </ol>
+  </p>
+
+</body>
+<script>
+  if (navigator && navigator.serviceWorker) {
+   navigator.serviceWorker.register('sw.js');
+ }
+ </script>
+
+</html>

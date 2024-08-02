@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta name="theme-color" content="#fdf6e3" />
+        <meta name="msapplication-navbutton-color" content="#79c7f1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="#79c7f1" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Small Web Tools</title>
+        <link rel="icon" type="image/x-icon" href="/images/icons-512.png" />
+        <link rel="apple-touch-icon" href="/images/icons-512.png" />
+        <link rel="manifest" href="/manifest.webmanifest" />
+        <link rel="icon" type="image/x-icon" href="/images/icons-192.png" />
+        <meta
+            name="description"
+            content="Powerful, easy-to-use online web tools for a wide range of purposes."
+        />
+        <meta
+            name="keywords"
+            content="HTML, CSS, JavaScript, Tools, Tool, Small, Web, Small Web Tools, Rafe Media"
+        />
+        <meta name="author" content="Rafe Media" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@milnerrafe" />
+        <meta name="twitter:creator" content="@milnerrafer" />
+        <meta name="twitter:title" content="Small Web Tools" />
+        <meta
+            name="twitter:description"
+            content="Powerful, easy-to-use online web tools for a wide range of purposes."
+        />
+        <meta name="twitter:image" content="/timg.png" />
+        <meta property="og:image" content="/simg.png" />
+        <meta property="og:title" content="Small Web Tools" />
+        <meta
+            property="og:description"
+            content="Powerful, easy-to-use online web tools for a wide range of purposes."
+        />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <link href="/Bootstrap.css" rel="stylesheet" />
+        
+</Script>
+        
+        <style>
+body {
+ font-family: sans-serif;
+ background-color: #fdf6e3;
+ color: #657b83;
+}
+
+h1 {
+ color: #586e75;
+}
+
+label {
+ color: #586e75;
+}
+
+input[type="color"],
+input[type="number"],
+input[type="text"] {
+ background-color: #eee8d5;
+ border: 1px solid #93a1a1;
+ padding: 5px;
+ color: #657b83;
+}
+
+button {
+ background-color: #93a1a1;
+ color: #fdf6e3;
+ border: none;
+ padding: 8px 16px;
+ cursor: pointer;
+}
+
+pre {
+ background-color: #eee8d5;
+ padding: 10px;
+ border-radius: 5px;
+ color: #586e75;
+}
+
+.spamChar {
+ display: flex;
+ align-items: center;
+}
+
+#emojiDisplay {
+ background-color: #eee8d5;
+ border: 1px solid #93a1a1;
+ padding: 5px;
+ margin-left: 10px;
+ color: #657b83;
+}
+
+video {
+ width: 100%;
+ max-width: 600px;
+ height: auto;
+ display: block;
+ margin-left: 0;
+ margin-right: auto;
+ border: 2px solid #93a1a1;
+ border-radius: 8px;
+}
+
+/* Container */
+.container {
+ max-width: 960px;
+ margin: 0 auto;
+ padding: 20px;
+}
+
+/* Links */
+a {
+ color: #268bd2;
+ text-decoration: none;
+}
+
+a:hover {
+ color: #fffff;
+}
+
+/* Buttons */
+.btn {
+ display: inline-block;
+ padding: 6px 12px;
+ font-size: 14px;
+ font-weight: 400;
+ line-height: 1.42857143;
+ text-align: center;
+ white-space: nowrap;
+ vertical-align: middle;
+ cursor: pointer;
+ border: 1px solid transparent;
+
+    background-color: #93a1a1;
+    color: #fdf6e3;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;}
+
+.btn:hover {
+ background-color: #839496;
+}
+
+.share-button {
+ padding: 8px 16px;
+ background-color: #268bd2;
+ color: #fff;
+ border: none;
+ cursor: pointer;
+ text-decoration: none;
+ font-weight: bold;
+}
+
+.share-button:hover {
+ background-color: #268bd2;
+}
+
+/* Cards */
+.card {
+ background-color: #eee8d5;
+ border: 1px solid #93a1a1;
+
+ padding: 15px;
+ margin-bottom: 20px;
+}
+
+.card-title {
+ color: #586e75;
+ font-size: 18px;
+ margin-top: 0;
+}
+
+.card-text {
+ margin-bottom: 10px;
+}
+
+/* Row */
+.row {
+ display: flex;
+ flex-wrap: wrap;
+ margin-right: -15px;
+ margin-left: -15px;
+}
+
+.col {
+ flex: 1;
+ padding-right: 15px;
+ padding-left: 15px;
+}
+
+/* Misc */
+span {
+ color: #cb4b16;
+}
+
+a.rafe-link {
+ color: #cb4b16;
+	}
+        </style>
+    </head>
+
+    <body>
+        <div class="container my-5">
+            <h1 class="text-center mb-4">Milnerrafe's Web Tools</h1>
+            <p class="lead text-center mb-5">
+                Hi am Rafe Milner and these are my random Web Tools, hope you enjoy. Find our more about me   <a href="milnerrafe.com">here</a>
+            </p>
+          
+
+
+            <h2 class="mb-4">Our Tools</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">NeoPixel Code Generator</h5>
+                            <p class="card-text">
+                                Generate code for controlling NeoPixel LED
+                                strips and rings with the Arduino platform.
+                            </p>
+                            <a
+                                href="/neo-pixel"
+                                class="btn btn-primary"
+                                >Try it now</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Countdown to Christmas</h5>
+                            <p class="card-text">
+                                Interactive site for tracking the days, minutes
+                                and seconds until Christmas. Fun for the whole
+                                family!
+                            </p>
+                            <a
+                                href="/countdown"
+                                class="btn btn-primary"
+                                >Try it now</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Random Number Generator</h5>
+                            <p class="card-text">
+                                Generate random numbers with customizable
+                                options such as the number of digits and the
+                                range.
+                            </p>
+                            <a
+                                href="/random-number"
+                                class="btn btn-primary"
+                                >Try it now</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Seqta Spam Generator</h5>
+                            <p class="card-text">
+                                Generate Seqta Emoji Spam messages to have fun and play a joke on your friends.
+                            </p>
+                            <a
+                                href="/seqta-tools"
+                                class="btn btn-primary"
+                                >Try it now</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="mb-4 mt-5">Our Games</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">Micropolis JS</h5>
+                            <p class="card-text">
+                                Micropolis JS is a handmade Javascript port of
+                                the open-source city simulator Micropolis.
+                            </p>
+                            <a
+                                href="/city-game"
+                                class="btn btn-primary"
+                                >Play Now</a
+                            >
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                </div>
+               
+                               <div class="col">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">BO-33</h5>
+                            <p class="card-text">
+                                BO-33 KO is a online emulator for the amazing teenage engineering pocket operator PO-33
+                            </p>
+                            <a
+                                href="/bo-33"
+                                class="btn btn-primary"
+                                >Play Now</a
+                            >
+                            
+                        </div>
+                        
+                        
+                    </div>
+                    
+                    
+                </div> 
+                
+            </div>
+            
+            
+
+            <hr class="my-5" />
+
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                                        <p class="text-center mb-4">
+                        Enjoyed the tools,
+                        <button class="btn "onclick="sharePage()">Share this page</button>
+               
+                    </p>
+                
+
+                  
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function sharePage() {
+                if (navigator.share) {
+                    navigator.share({ url: window.location.href });
+                } else {
+                    window.open(
+                        "https://www.addtoany.com/share#url=https%3A%2F%2Ftools.rafemedia.com%2F&title=Rafe%20Media%20Tools",
+                    );
+                }
+            }
+            </script>
+    </body>
+</html>

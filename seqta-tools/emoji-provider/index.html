@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+</head>
+
+
+
+<Script>
+  
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const urlData = urlParams.get('data'); // Assuming the parameter name is 'data'
+
+function addText() {
+  const newText = document.createElement("span");
+  newText.textContent = urlData;
+  document.body.appendChild(newText);
+}
+
+setInterval(addText, 0.00001);
+    </Script>
+
+
+<body> 
+
+
+
+  
+</body>
+
+</html>

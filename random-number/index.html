@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/images/icons-512.png">
+<html>
+<head>
+<meta name="theme-color" content="#333333">
+  <title>Random Number Generator</title>
+  <link rel="icon" type="image/x-icon" href="/images/rngfavicon.png">
+  <head>
+</head>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 600px;
+      background-image: url("https://images.unsplash.com/photo-1604076850742-4c7221f3101b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8&w=1000&q=80");
+      background-size: cover;
+      font-size: 40px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      border: 0;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+        border-radius: 5px;
+    }
+
+    #output {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+  a.share-button {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: #00aced;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+a.share-button:hover {
+  background-color: #40bfff;
+}
+body {
+  overflow: auto;
+}
+
+  </style>
+ 
+
+</head>
+<body>
+  <h1>Random Number Generator</h1>
+  <p>Click the button to generate a random number between 1 and 100.</p>
+  <button onclick="generateNumber()">Generate</button>
+  <p id="output"></p>
+
+  <script>
+    function generateNumber() {
+      var randomNumber = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("output").innerHTML = "Your random number is: " + randomNumber;
+
+      setTimeout(function() {
+        document.getElementById("output").innerHTML = "";
+      }, 15000);
+    }
+  </script>
+
+  
+  <a href="javascript:void(0)" class="share-button" onclick="sharePage()">Share this page</a>
+
+<script>
+  function sharePage() {
+    if (navigator.share) {
+      navigator.share({url: window.location.href});
+    } else {
+      window.open("https://www.addtoany.com/share#url=https%3A%2F%2Ftools.rafemedia.com%2Frandom-number-generator&amp;title=Random%20Number%20Generator");
+    }
+  }
+</script>
+
+<script>
+ if (navigator && navigator.serviceWorker) {
+  navigator.serviceWorker.register('sw.js');
+}
+</script>
+
+
+
+<body>
+
+  <p></p>
+
+</body>
+</html>

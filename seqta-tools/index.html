@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seqta Spam Generator</title>
+    <style>
+/* Solarized Light Theme */
+body {
+    font-family: sans-serif;
+    background-color: #fdf6e3;
+    color: #657b83;
+}
+
+h1 {
+    color: #586e75;
+}
+
+label {
+    color: #586e75;
+}
+
+input[type="color"],
+input[type="number"],
+input[type="text"] {
+    background-color: #eee8d5;
+    border: 1px solid #93a1a1;
+    padding: 5px;
+    color: #657b83;
+}
+
+button {
+    background-color: #93a1a1;
+    color: #fdf6e3;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+pre {
+    background-color: #eee8d5;
+    padding: 10px;
+    border-radius: 5px;
+    color: #586e75;
+}
+
+.spamChar {
+    display: flex;
+    align-items: center;
+}
+
+#emojiDisplay {
+    background-color: #eee8d5;
+    border: 1px solid #93a1a1;
+    padding: 5px;
+    margin-left: 10px;
+    color: #657b83;
+}
+
+
+
+
+video {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    border: 2px solid #93a1a1;
+    border-radius: 8px;
+
+
+}
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Seqta Spam Generator</h1>
+    <p>Have fun and play a joke on your friends.</p>
+
+    <form>
+    	<Br>
+
+<div class="bgColor"> <label for="bgColor">Background Color:</label>
+        <input type="color" id="bgColor" value="#ffffff">
+ </div>
+
+	<Br>
+
+        
+<div class="iframeHeight">  <label for="iframeHeight">Iframe Height (px):</label>
+        <input type="number" id="iframeHeight" value="400"> </div>
+   
+       	<Br>
+
+       
+<div class="spamChar" >
+        <label for="spamChar">Spam Character:</label>
+        <input type="text" id="spamChar" value="F0%9F%8D%9E" >
+                <div id="emojiDisplay"></div>
+ </div>
+
+	<Br>
+
+    <div class="Generate Code">
+        <button type="button" onclick="generateCode()">Generate Code</button>
+        <button type="button" onclick="copyCode()">Copy Code</button>
+    </div>
+    
+    </form>
+    
+   
+
+    <p>
+        <strong>Generated Code:</strong><br>
+        <pre id="code"></pre>
+    </p>
+
+    <p>
+        <strong>How To:</strong><br>
+       <div class="vid-border"> <video autoplay loop muted playsinline> <source src="https://a.dropoverapp.com/cloud/download/5941c137-bde2-4d1b-a3d0-eab9a5bfd741/5b29e303-e0c9-4b8b-8ef9-65e373c936b4" type="video/mp4"> Your browser does not support the video tag. </video> </div>
+    </p>
+    
+    <script>
+        function generateCode() {
+            const bgColor = document.getElementById('bgColor').value;
+            const iframeHeight = document.getElementById('iframeHeight').value;
+            const spamChar = document.getElementById('spamChar').value;
+            
+            
+
+            
+            const code = ` [[embed:raw|&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;style&gt;
+    body{
+        margin: 0;
+    }
+    iframe{      
+        display: block;
+        height: 100vh;
+        width: 100vw;     
+        border: none;
+        background: ${bgColor};
+        height: ${iframeHeight}px;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;iframe src="https://tools.rafemedia.com/seqta-tools/emoji-provider/?data=%${spamChar}"&gt;&lt;/iframe&gt;
+&lt;/body&gt;
+&lt;/html&gt;]]`;
+
+            document.getElementById('code').innerText = code;
+        }
+        
+        document.getElementById('spamChar').addEventListener('input', convertToUTF8);
+
+        function convertToUTF8(event) {
+            const input = event.target.value;
+            const utf8Bytes = new TextEncoder().encode(input);
+            const utf8HexStr = Array.from(utf8Bytes)
+                .map(byte => byte.toString(16).toUpperCase().padStart(2, '0'))
+                .join('%');
+            event.target.value = utf8HexStr;
+        }
+        
+        
+                    function convertToUTF8(event) {
+  const input = event.target.value;
+  const utf8Bytes = new TextEncoder().encode(input);
+  const utf8HexStr = Array.from(utf8Bytes)
+    .map(byte => byte.toString(16).toUpperCase().padStart(2, '0'))
+    .join('%');
+  event.target.value = utf8HexStr;
+  document.getElementById('emojiDisplay').textContent = input;
+}
+
+document.getElementById('emojiDisplay').textContent = '🍞';
+
+function copyCode() {
+    const codeElement = document.getElementById('code');
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = codeElement.innerText;
+    document.body.appendChild(tempTextArea);
+    tempTextArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempTextArea);
+    alert('Code copied to clipboard!');
+}
+
+    </script>
+</body>
+
+</html>

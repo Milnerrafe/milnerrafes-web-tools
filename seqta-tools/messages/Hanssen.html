@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            border: 2px solid #000;
+            padding: 20px;
+            background-color: #fff;
+        }
+
+        #text {
+            font-size: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #000;
+            animation: blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="text"></div>
+    </div>
+    <script>
+        const textElement = document.getElementById('text');
+        const message = `Hello Mr Hanssen
+
+I would love to participate in this activity,
+
+thanks Rafe.`;
+
+        function typeText(element, text, callback) {
+            let index = 0;
+            element.textContent = '';
+            const interval = setInterval(() => {
+                element.textContent += text[index];
+                index++;
+                if (index === text.length) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        callback();
+                    }, 30000); // Wait for 30 seconds
+                }
+            }, 50); // Adjust typing speed here (in milliseconds)
+        }
+
+        function startAnimation() {
+            typeText(textElement, message, startAnimation);
+        }
+
+        startAnimation();
+    </script>
+</body>
+</html>
